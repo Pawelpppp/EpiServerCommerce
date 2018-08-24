@@ -316,20 +316,27 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Controllers\MyControllerBase.cs" />
+    <Compile Include="Controllers\MyNodeController.cs" />
+    <Compile Include="Controllers\MyProductController.cs" />
+    <Compile Include="Controllers\MyVariationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\EPiServerCommerceInitializationModule.cs" />
+    <Compile Include="Infrastructure\StructureMapDependencyResolver.cs" />
+    <Compile Include="Models\Catalog\MyNode.cs" />
+    <Compile Include="Models\Catalog\MyProduct.cs" />
+    <Compile Include="Models\Catalog\MyVariation.cs" />
+    <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupportingClasses\NameAndUrls.cs" />
     <Compile Include="SupportingClasses\NodeEntryCombo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\Blocks\" />
-    <Folder Include="Models\Media\" />
-    <Folder Include="Models\Pages\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
@@ -372,6 +379,9 @@
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\web.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\EPiServer.Cms.TinyMce.zip" />
     <None Include="packages.config" />
+    <Content Include="Views\MyNode\Index.cshtml" />
+    <Content Include="Views\MyProduct\Index.cshtml" />
+    <Content Include="Views\MyVariation\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
