@@ -1,8 +1,32 @@
 ﻿@using EPiServer.Core
 @using EPiServer.Web.Mvc.Html
 
-@model EpiserverCommerce.Models.Catalog.MyNode
-<div>
-    @Html.PropertyFor(m=>m.Code)
-</div>
+@*@model EpiserverCommerce.Models.Catalog.MyNode*@
+@model CommerceTraining.SupportingClasses.NodeEntryCombo
+@*<div>
+    @Html.PropertyFor(m => m.MainBody)
+</div>*@
 <h2> node </h2>
+<ul>
+    <h3>nodes</h3>
+    @foreach (var item in Model.nodes)
+    {
+        <li>
+            <a href="@item.url">@item.name</a>
+        </li>
+    }
+
+</ul>
+
+<ul>
+    <h3>entries</h3>
+    @foreach (var item in Model.entries)
+    {
+    <li>
+        <img height="50" width="50" src="@item.imageUrl" />
+        <a href="@item.url">@item.name</a>
+
+    </li>
+    }
+
+</ul>

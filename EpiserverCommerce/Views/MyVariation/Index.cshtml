@@ -1,8 +1,31 @@
 ﻿@using EPiServer.Core
 @using EPiServer.Web.Mvc.Html
-
-@model EpiserverCommerce.Models.Catalog.MyVariation
+@model EpiserverCommerce.ViewModels.FashionVariationViewModel
 <div>
-  @Html.PropertyFor(m => m.MainBody)
+    @Html.PropertyFor(m => m.MainBody)
 </div>
 <h2> Variation</h2>
+<ul>
+    <h2>entries</h2>
+    <li>
+        <a href="@Model.url">
+            <img height="50" width="50" src="@Model.imageUrl" />
+            @*<a href="@item.url">@item.name</a>*@
+            @*<h4> Price: @Model.PriceString</h4>*@
+            <h3 @Html.EditAttributes(x => x.name)>@Model.name</h3>
+            <h4 @Html.EditAttributes(x => x.PriceString)>@Model.PriceString</h4>
+            <h4> Price with discount: @Model.DiscountPrice.Money.ToString()</h4>
+        </a>
+    </li>
+
+    @using (Html.BeginForm("AddToCard", "MyVariation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @*@Html.ValidationSummary(true)
+        <fieldset>
+            Select a file <input type="file" name="file" />
+            <input type="submit" value="Upload" />
+        </fieldset>*@
+        <input id="Submit1" type="submit" value="Add to card"/>
+    }
+
+</ul>

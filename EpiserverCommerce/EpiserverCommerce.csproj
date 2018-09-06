@@ -320,6 +320,7 @@
     <Compile Include="Controllers\MyNodeController.cs" />
     <Compile Include="Controllers\MyProductController.cs" />
     <Compile Include="Controllers\MyVariationController.cs" />
+    <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -333,12 +334,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupportingClasses\NameAndUrls.cs" />
     <Compile Include="SupportingClasses\NodeEntryCombo.cs" />
+    <Compile Include="ViewModels\FashionVariationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
     <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Properties\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Static\css\bootstrap-collapse.js" />
@@ -382,6 +383,8 @@
     <Content Include="Views\MyNode\Index.cshtml" />
     <Content Include="Views\MyProduct\Index.cshtml" />
     <Content Include="Views\MyVariation\Index.cshtml" />
+    <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\Shared\_Root.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

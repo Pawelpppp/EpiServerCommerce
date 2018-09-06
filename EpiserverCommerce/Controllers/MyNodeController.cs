@@ -8,6 +8,8 @@ using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Routing;
 using EpiserverCommerce.Models.Catalog;
+using CommerceTraining.SupportingClasses;
+using System;
 
 namespace EpiserverCommerce.Controllers
 {
@@ -21,8 +23,11 @@ namespace EpiserverCommerce.Controllers
         {
             /* Implementation of action. You can create your own view model class that you pass to the view or
              * you can pass the page type for simpler templates */
-
-            return View(currentPage);
+            NodeEntryCombo nodeEntryCombo = new NodeEntryCombo();
+            nodeEntryCombo.nodes = GetNodes(currentPage.ContentLink);
+            nodeEntryCombo.entries = base.GetEntries(currentPage.ContentLink);
+            return View(nodeEntryCombo);
         }
     }
 }
+

@@ -1,8 +1,22 @@
 ﻿@using EPiServer.Core
 @using EPiServer.Web.Mvc.Html
-
+@using EPiServer.Commerce.Catalog.ContentTypes
 @model EpiserverCommerce.Models.Catalog.MyProduct
 <div>
-  @Html.PropertyFor(m => m.MainBody)
+    @Html.PropertyFor(m => m.MainBody)
 </div>
-<hi >ASDDSA </hi>
+<h1>MyProduct </h1>
+
+<ul>
+    @*@foreach (var item in Model.ListOfVariation)
+    {
+        <li>
+            @*<img height="50" width="50" src="@item.imageUrl" />
+                <a href="@item.url">@item.name</a>
+            <p>Znaleziono variacje</p>
+
+        </li>
+
+
+    }*@
+</ul>

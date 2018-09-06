@@ -5,9 +5,11 @@ using EPiServer;
 using EPiServer.Commerce.Catalog;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
+using EPiServer.ServiceLocation;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Routing;
 using EpiserverCommerce.Models.Catalog;
+using EPiServer.Commerce.Catalog.Linking;
 
 namespace EpiserverCommerce.Controllers
 {
@@ -21,8 +23,9 @@ namespace EpiserverCommerce.Controllers
         {
             /* Implementation of action. You can create your own view model class that you pass to the view or
              * you can pass the page type for simpler templates */
-
+            currentContent.SetVariations(currentContent.ContentLink);
             return View(currentContent);
         }
+
     }
 }
